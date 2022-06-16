@@ -5,7 +5,7 @@ import iconBack from "../assets/statics/volver.png"
 const Header = () => {
   return (
     <>
-      <a href="carrito.html"><img src={iconCart} alt="" class="carritou"/></a>
+      <a href="#"><img src={iconCart} alt="" class="carritou"/></a>
           <a href=""><img src={iconBack} alt="" class="volver"/></a>
     
     <h1 className="titulo">
