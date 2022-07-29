@@ -1,23 +1,30 @@
 import React from 'react'
-import cerebro from "../assets/statics/cerebroLoco.png"
+
 import "../assets/css/CartItem.css";
+import { useContext } from 'react';
+import Contexto from '../context/Contexto';
 
 
-const ItemCart = () => {
+const ItemCart = (props) => {
+  const {nombre, precio, img, id, deleteCart} = props[0]
+  console.log(props, "como vienen al item")
+  const handleBorrar = () =>{ 
+    deleteCart(id)
+  }
   return (
     <>
     
     <div className="carrito-item">
               <img
-                src={cerebro}
+                src={img}
                 alt=""
                 className="carrito-item-img"
               />
               <div className="carrito-txt">
-                <h1 className="carrito-item-titulo">Cerebro loco</h1>
-                <h3 className="carrito-item-precio">AR$ 150</h3>
+                <h1 className="carrito-item-titulo">{nombre}</h1>
+                <h3 className="carrito-item-precio">{precio}</h3>
               </div>
-              <img src="borrar.png" alt="" className="carrito-item-borrar" />
+              <img src="borrar.png" alt="" className="carrito-item-borrar" onClick={handleBorrar}/>
             </div>
     
     </>

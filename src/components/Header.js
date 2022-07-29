@@ -1,12 +1,13 @@
 import React from 'react';
 import iconCart from "../assets/statics/carrito.png"
 import iconBack from "../assets/statics/volver.png"
+import { Link } from 'react-router-dom';
 
 const Header = () => {
   return (
     <>
-      <a href="#"><img src={iconCart} alt="" class="carritou"/></a>
-          <a href=""><img src={iconBack} alt="" class="volver"/></a>
+      <Link to="/cart"><img src={iconCart} alt="" className="carritou"/></Link>
+          <Link to=""><img src={iconBack} alt="" className="volver"/></Link>
     
     <h1 className="titulo">
           Dev <br />

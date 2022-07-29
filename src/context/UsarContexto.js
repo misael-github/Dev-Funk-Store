@@ -1,34 +1,44 @@
 import Contexto from "./Contexto";
-
+import { useReducer } from "react";
 import React from 'react';
+import axios from "axios";
+import Reducer from "./Reducer";
 
 const UsarContexto = (props) => {
-    const {childrens} = props;
+    const {children} = props;
     const initState = {
-        products: [],
-        cart: [],
+      products: [],
+      cart: [],
     }
+    const [state, dispatch] = useReducer(Reducer, initState)
     const getProducts = async () => { // pedir los productos
-
+        const res = await axios.get("https://devrockstore-default-rtdb.firebaseio.com/productos.json");
+        
+        dispatch({type:"GET_PRODUCTS", payload:res.data})
+        console.log(res.data, "desde usar contexto")
     }
-    const setCart = () => { // agregar productos
-
+    
+     const setCart = (item) => {
+      console.log("agregamos", item)
+     }
+    
+    const deleteCart = (item) => { // eliminar productos
+      console.log("eliminar carrito", item)
     }
-    const deleteCart = () => { // eliminar productos
-
-    }
-  return (
-    <Contexto.Provider value={{
-        products: initState.products,
-        cart: initState.cart,
+    return (
+      <Contexto.Provider
+       value={{
+        products: state.products,
+        cart: state.cart,
         getProducts,
         setCart,
         deleteCart
     }}>
-      {childrens}
-     
+      {children}
+    
     </Contexto.Provider>
   )
 }
+
 
 export default UsarContexto;
