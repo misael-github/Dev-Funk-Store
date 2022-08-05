@@ -19,7 +19,7 @@ const Product = () => {
             <a href="carrito.html">  <button className="home-item-comprar">+</button></a>
           
             </div>
-            <p>"En la colección de stickers de Escuela Devrock no podía faltar uno de Jakob Nielsen a.k.a Cat Nielsen en esta versión. ¿Está hecho gatito? Sí, lo viste bien. Tiene bijotes, orejas y te enseña las heurísticas de usabilidad."</p>
+            <p className="detalle-descripcion">"En la colección de stickers de Escuela Devrock no podía faltar uno de Jakob Nielsen a.k.a Cat Nielsen en esta versión. ¿Está hecho gatito? Sí, lo viste bien. Tiene bijotes, orejas y te enseña las heurísticas de usabilidad."</p>
 
         </div>
     

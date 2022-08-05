@@ -11,13 +11,14 @@ const Item = (props) => {
   const {setCart} = useContext(Contexto)
   return (
     <>
-          <Link to="/product" className='item-wrap-link'>
         <div className="home-item">
+          <Link to="/product" className='item-wrap-link'>
                 <img
                   src={img}
                   alt=""
                   className="home-item-img"
                 />
+                </Link>
                 <div className="home-item-info">
                 <h1 className="home-item-titulo">{nombre}</h1>
                 <p className="home-item-medidas">{medidas}</p>
@@ -29,7 +30,6 @@ const Item = (props) => {
                 </div>
                 </div>
               </div>
-              </Link>
     </>
   )
 }

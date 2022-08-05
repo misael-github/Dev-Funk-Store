@@ -8,8 +8,8 @@ const Cart = () => {
     <>
           <div className="carrito">
           <div className="carrito-listadito">
-             {cart.map((item, i) => (
-              <ItemCart key={i} {...item} ></ItemCart>
+             {cart.map((item, i) => ( // LA I COLOCA UNA KEY POR CADA ITERACION
+              <ItemCart key={i} {...item} deleteCart = {deleteCart}></ItemCart> // ITERO LOS ITEMS CON EL COMPONENTE Y CON ...ITEM OBTENGO TODA  LA INFO QUE TIENE EL ITEM
 
              ))}
           </div>

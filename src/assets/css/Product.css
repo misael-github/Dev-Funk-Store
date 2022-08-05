@@ -5,10 +5,12 @@
     align-items: center;
     padding: 15px;
   }
-  
   .detalle-img {
     width: 80%;
+    max-width: 400px;
   }
+
   .detalle p {
-    text-align: center;
+   
+    max-width: 500px;
   }
