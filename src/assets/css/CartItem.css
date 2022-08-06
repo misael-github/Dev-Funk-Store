@@ -28,6 +28,7 @@
   }
   .carrito-precio {
     width: 100%;
-    text-align: right;
+    font-size: 18px;
+    text-align: CENTER;
     margin-top: 15px;
   }

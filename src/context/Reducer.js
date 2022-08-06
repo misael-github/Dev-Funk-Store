@@ -27,6 +27,7 @@ const Reducer = (state, action) => {
         cart: state.cart.filter((item) => item[0].id != parseInt(payload)),
     
       };
+      default: return state;
   }
 };
 
