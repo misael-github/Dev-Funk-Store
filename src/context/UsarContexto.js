@@ -10,10 +10,12 @@ const UsarContexto = (props) => {
       products: [],
       cart: [],
     }
+    // EN VES DE TENER MUCHOS STATE UTILIZO EL REDUCER CON EL SWITCH Y DE ACUERDO A LA ACCION(TYPE) MODIFICO EL STATE
     const [state, dispatch] = useReducer(Reducer, initState)
+
     const getProducts = async () => { // pedir los productos
         const res = await axios.get("https://devrockstore-default-rtdb.firebaseio.com/productos.json");
-        // LLAMO A DISPATCH Y LE PASO UN OBJETO CON EL TYPE Y EL PAYLOAD 
+        
         // EL DOSPATCH LLAMA A MI REDUCER CON ESE TYPE Y LE PASA EN PRODUCTS EL PAYLOAD
         dispatch({type:"GET_PRODUCTS", payload:res.data})
         // console.log(res.data, "desde usar contexto")

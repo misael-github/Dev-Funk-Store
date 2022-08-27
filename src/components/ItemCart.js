@@ -6,8 +6,8 @@ import Contexto from '../context/Contexto';
 
 
 const ItemCart = (props) => {
-  const {nombre, precio, img, id} = props[0]
-  console.log(props, "como vienen al item")
+  const {nombre, precio, img, id} = props
+  // console.log(props, "como vienen al item")
   const handleBorrar = () =>{ 
     props.deleteCart(id)
   }

@@ -7,12 +7,14 @@ import Contexto from '../context/Contexto';
 
 const Cart = () => {
   const {cart, deleteCart} = useContext(Contexto)
-
   const [cuenta, setCuenta] = useState(0)
   
   const Total = () => {
-    cart.map((item) => setCuenta(cuenta + item[0].precio)) 
+    for (const iterator of cart) {
+      console.log(iterator.precio)
+      setCuenta(cuenta + iterator.precio)
       
+    }
     
   };
     useEffect(() => {
@@ -28,7 +30,7 @@ const Cart = () => {
              ))}
           </div>
           <div className="carrito-precio">
-            <strong>Total a pagar </strong><br/>${cuenta} {console.log(cuenta)}
+            <strong>Total a pagar </strong><br/>${cuenta} 
           </div>
         </div>
     
